@@ -12,8 +12,8 @@
     <name>Incode Build Parent POM</name>
     <description>
         This module defines a standard parent POM to use for various Incode applications and modules.  
-        Its primary purpose is to make it easy to use a set up maven mixins (https://github.com/odavid/maven-plugins) within child POMs; 
-        specifically to hold the required pluginManagement so that versions of plugins are locked down.
+        Its primary purpose is to make it easy to use a set up maven mixins (https://github.com/odavid/maven-plugins)
+        within child POMs.  Specifically this means locking down the versions of plugins using pluginManagement.
         
         It does NOT define any mixins for Apache Isis.
     </description>
@@ -99,6 +99,7 @@
 
                 <mavenmixin-docker.version>0.0.3</mavenmixin-docker.version>
                 <docker-maven-plugin.version>0.4.13</docker-maven-plugin.version>
+                <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
 
                 <maven-checkstyle-plugin.configLocation>${project.basedir}/codequality/checkstyle.xml</maven-checkstyle-plugin.configLocation>
                 <maven-pmd-plugin.ruleset>${project.basedir}/codequality/pmd.xml</maven-pmd-plugin.ruleset>
@@ -128,6 +129,11 @@
                             <groupId>com.spotify</groupId>
                             <artifactId>docker-maven-plugin</artifactId>
                             <version>${docker-maven-plugin.version}</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.gmavenplus</groupId>
+                            <artifactId>gmavenplus-plugin</artifactId>
+                            <version>${gmavenplus-plugin.version}</version>
                         </plugin>
 
                         <!-- mavenmixin-enforcerrelaxed -->
@@ -426,5 +432,4 @@
         </profile>
     </profiles>
 
-    
 </project>
