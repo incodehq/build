@@ -54,11 +54,12 @@
                 <maven-cucumber-reporting.version>3.2.0</maven-cucumber-reporting.version>
                 <maven-cucumber-reporting.dependency.log4j.version>2.7</maven-cucumber-reporting.dependency.log4j.version>
 
-                <mavenmixin-datanucleusenhance.version>0.0.4</mavenmixin-datanucleusenhance.version>
-                <datanucleus-maven-plugin.version>4.0.5</datanucleus-maven-plugin.version>
-                <datanucleus-core.version>4.1.7</datanucleus-core.version>
-                <datanucleus-api-jdo.version>4.1.1</datanucleus-api-jdo.version>
-                <datanucleus-jodatime.version>4.1.0-release</datanucleus-jodatime.version>
+                <mavenmixin-datanucleusenhance.version>0.0.5-SNAPSHOT</mavenmixin-datanucleusenhance.version>
+
+                <datanucleus-maven-plugin.version>5.0.2</datanucleus-maven-plugin.version>
+                <datanucleus-core.version>5.1.2</datanucleus-core.version>
+                <datanucleus-api-jdo.version>5.1.2</datanucleus-api-jdo.version>
+                <datanucleus-jodatime.version>5.1.0-release</datanucleus-jodatime.version>
 
                 <mavenmixin-enforcerrelaxed.version>0.0.2</mavenmixin-enforcerrelaxed.version>
                 <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
