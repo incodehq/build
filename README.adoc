@@ -172,6 +172,7 @@ For example, to enable the https://github.com/danhaywood/java-mavenmixin-surefir
 == Change Log
 
 
+* 4 - re-release, previous version inadvertantly left a -SNAPSHOT reference for java-mavenmixin-datanucleusenhance 
 * 3 - updated for datanucleus 0.0.5, to include DN 5.1.5 (in preparation for Apache Isis v2.0)
 * 2 - adds in gmavenplus-plugin dependency, used by for docker-mavenmixin.
 * 1 - first release, adapted from link:https://github.com/incodehq/incode-parent[incode-parent] (v1.13.2.1), but removed all dependencies and reference to Apache Isis.
@@ -226,8 +227,8 @@ For example:
 
 [source]
 ----
-sh release.sh 3 \
-              4-SNAPSHOT \
+sh release.sh 4 \
+              5-SNAPSHOT \
               dan@haywood-associates.co.uk \
               "this is not really my passphrase"
 ----
