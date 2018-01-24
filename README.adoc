@@ -91,7 +91,7 @@ This parent POM defines `<properties>` and `<pluginManagement>` for the plugins 
 </mixin>
 
 |https://github.com/danhaywood/java-mavenmixin-surefire[surefire]
-|0.0.4
+|0.0.6
 |Run surefire plugin for unit, integration and/or (http://cucumber.io[Cucumber]) BDD specs.
 |<mixin> +
 {nbsp}  <groupId>com.danhaywood.mavenmixin</groupId> +
@@ -172,6 +172,7 @@ For example, to enable the https://github.com/danhaywood/java-mavenmixin-surefir
 == Change Log
 
 
+* 2.1 - maintenance release, bumps to surefire 0.0.5
 * 2 - adds in gmavenplus-plugin dependency, used by for docker-mavenmixin.
 * 1 - first release, adapted from link:https://github.com/incodehq/incode-parent[incode-parent] (v1.13.2.1), but removed all dependencies and reference to Apache Isis.
 
@@ -225,8 +226,8 @@ For example:
 
 [source]
 ----
-sh release.sh 2 \
-              3-SNAPSHOT \
+sh release.sh 2.1 \
+              2.2-SNAPSHOT \
               dan@haywood-associates.co.uk \
               "this is not really my passphrase"
 ----
