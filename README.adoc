@@ -1,4 +1,4 @@
-= incodehq-build
+= incode-build
 :_imagesdir: ./
 :toc:
 
