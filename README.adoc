@@ -1,4 +1,4 @@
-= incodehq-build
+= incode-build
 :_imagesdir: ./
 :toc:
 
@@ -83,7 +83,7 @@ This parent POM defines `<properties>` and `<pluginManagement>` for the plugins 
 </mixin>
 
 |https://github.com/danhaywood/java-mavenmixin-standard[standard]
-|0.0.3
+|0.0.4
 |Defines the "standard" set of plugins (clean, compile, jar, install, site etc)
 |<mixin> +
 {nbsp}  <groupId>com.danhaywood.mavenmixin</groupId> +
@@ -123,7 +123,7 @@ To configure:
 <parent>
     <groupId>org.incode</groupId>
     <artifactId>incode-build</artifactId>
-    <version>2</version>
+    <version>2.2</version>
 </parent>
 ----
 +
@@ -174,6 +174,7 @@ For example, to enable the https://github.com/danhaywood/java-mavenmixin-surefir
 
 * 4 - re-release, previous version inadvertantly left a -SNAPSHOT reference for java-mavenmixin-datanucleusenhance 
 * 3 - updated for datanucleus 0.0.5, to include DN 5.1.5 (in preparation for Apache Isis v2.0)
+* 2.2 - maintenance release, bumps to standard 0.0.4
 * 2.1 - maintenance release, bumps to surefire 0.0.5
 * 2 - adds in gmavenplus-plugin dependency, used by for docker-mavenmixin.
 * 1 - first release, adapted from link:https://github.com/incodehq/incode-parent[incode-parent] (v1.13.2.1), but removed all dependencies and reference to Apache Isis.
@@ -248,7 +249,7 @@ If the script completes successfully, then push changes:
 
 [source]
 ----
-git push origin master && git push origin 2
+git push origin master && git push origin 2.2
 ----
 
 If the script fails to complete, then identify the cause, perform a `git reset --hard` to start over and fix the issue before trying again.

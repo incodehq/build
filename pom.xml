@@ -75,7 +75,7 @@
                 <maven-jxr-plugin.version>2.4</maven-jxr-plugin.version>
                 <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
 
-                <mavenmixin-standard.version>0.0.3</mavenmixin-standard.version>
+                <mavenmixin-standard.version>0.0.4</mavenmixin-standard.version>
                 <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
                 <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
                 <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
