@@ -123,7 +123,7 @@ To configure:
 <parent>
     <groupId>org.incode</groupId>
     <artifactId>incode-build</artifactId>
-    <version>2.2</version>
+    <version>2.4</version>
 </parent>
 ----
 +
@@ -172,6 +172,7 @@ For example, to enable the https://github.com/danhaywood/java-mavenmixin-surefir
 == Change Log
 
 
+* 2.4 - moves snapshot repository definitions into profiles
 * 2.3 - maintenance release, bumps to docker 0.0.4
 * 2.2 - maintenance release, bumps to standard 0.0.4
 * 2.1 - maintenance release, bumps to surefire 0.0.6
@@ -228,8 +229,8 @@ For example:
 
 [source]
 ----
-sh release.sh 2.3 \
-              2.4-SNAPSHOT \
+sh release.sh 2.4 \
+              2.5-SNAPSHOT \
               dan@haywood-associates.co.uk \
               "this is not really my passphrase"
 ----
@@ -248,7 +249,7 @@ If the script completes successfully, then push changes:
 
 [source]
 ----
-git push origin master && git push origin 2.3
+git push origin maint-2 && git push origin 2.4
 ----
 
 If the script fails to complete, then identify the cause, perform a `git reset --hard` to start over and fix the issue before trying again.
