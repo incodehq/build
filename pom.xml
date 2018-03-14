@@ -5,7 +5,7 @@
 
     <groupId>org.incode</groupId>
     <artifactId>incode-build</artifactId>
-    <version>6-SNAPSHOT</version>
+    <version>6</version>
     <packaging>pom</packaging>
     
     <name>Incode Build Parent POM</name>
