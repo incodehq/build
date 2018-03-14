@@ -43,7 +43,7 @@ This parent POM defines `<properties>` and `<pluginManagement>` for the plugins 
 </mixin>
 
 |https://github.com/danhaywood/java-mavenmixin-docker[docker]
-|0.0.3
+|0.0.4
 |Configures docker to package images and upload to a docker registry (docker hub by default)
 |<mixin> +
 {nbsp}  <groupId>com.danhaywood.mavenmixin</groupId> +
@@ -172,8 +172,9 @@ For example, to enable the https://github.com/danhaywood/java-mavenmixin-surefir
 == Change Log
 
 
+* 2.3 - maintenance release, bumps to docker 0.0.4
 * 2.2 - maintenance release, bumps to standard 0.0.4
-* 2.1 - maintenance release, bumps to surefire 0.0.5
+* 2.1 - maintenance release, bumps to surefire 0.0.6
 * 2 - adds in gmavenplus-plugin dependency, used by for docker-mavenmixin.
 * 1 - first release, adapted from link:https://github.com/incodehq/incode-parent[incode-parent] (v1.13.2.1), but removed all dependencies and reference to Apache Isis.
 
@@ -227,8 +228,8 @@ For example:
 
 [source]
 ----
-sh release.sh 2.2 \
-              2.3-SNAPSHOT \
+sh release.sh 2.3 \
+              2.4-SNAPSHOT \
               dan@haywood-associates.co.uk \
               "this is not really my passphrase"
 ----
@@ -247,7 +248,7 @@ If the script completes successfully, then push changes:
 
 [source]
 ----
-git push origin master && git push origin 2.2
+git push origin master && git push origin 2.3
 ----
 
 If the script fails to complete, then identify the cause, perform a `git reset --hard` to start over and fix the issue before trying again.
