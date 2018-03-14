@@ -96,9 +96,8 @@
                 <jdepend-maven-plugin.version>2.0-beta-2</jdepend-maven-plugin.version>
                 <findbugs-maven-plugin.version>2.5</findbugs-maven-plugin.version>
 
-                <mavenmixin-docker.version>0.0.3</mavenmixin-docker.version>
-                <docker-maven-plugin.version>0.4.13</docker-maven-plugin.version>
-                <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
+                <mavenmixin-docker.version>0.0.4</mavenmixin-docker.version>
+                <docker-maven-plugin.version>1.0.0</docker-maven-plugin.version>
 
                 <maven-checkstyle-plugin.configLocation>${project.basedir}/codequality/checkstyle.xml</maven-checkstyle-plugin.configLocation>
                 <maven-pmd-plugin.ruleset>${project.basedir}/codequality/pmd.xml</maven-pmd-plugin.ruleset>
@@ -128,11 +127,6 @@
                             <groupId>com.spotify</groupId>
                             <artifactId>docker-maven-plugin</artifactId>
                             <version>${docker-maven-plugin.version}</version>
-                        </plugin>
-                        <plugin>
-                            <groupId>org.codehaus.gmavenplus</groupId>
-                            <artifactId>gmavenplus-plugin</artifactId>
-                            <version>${gmavenplus-plugin.version}</version>
                         </plugin>
 
                         <!-- mavenmixin-enforcerrelaxed -->
