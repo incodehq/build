@@ -171,7 +171,6 @@ For example, to enable the https://github.com/danhaywood/java-mavenmixin-surefir
 
 == Change Log
 
-
 * 6 - (merges in 2.4), moves snapshot repository definitions into profiles
 * 5 - (merges in 2.1, 2.2, 2.3), bumps to surefire 0.0.6, standard 0.0.4, docker 0.0.4
 * 4 - (based on 2), updated for datanucleus 0.0.5, to include DN 5.1.5 (in preparation for Apache Isis v2.0)
