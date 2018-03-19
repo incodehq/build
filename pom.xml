@@ -5,7 +5,7 @@
 
     <groupId>org.incode</groupId>
     <artifactId>incode-build</artifactId>
-    <version>7-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     
     <name>Incode Build Parent POM</name>
@@ -16,7 +16,11 @@
         
         It does NOT define any mixins for Apache Isis.
     </description>
-    
+
+    <properties>
+        <revision>7-SNAPSHOT</revision>
+    </properties>
+
     <url>https://github.com/incodehq/incode-build</url>
     <licenses>
         <license>
@@ -449,6 +453,52 @@
                     <id>ossrh</id>
                     <url>https://oss.sonatype.org/content/repositories/snapshots</url>
                 </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <!--
+            this profile allows builds to be deployed to an inhouse nexus repo.
+
+            export NEXUS_USERNAME=...
+            export NEXUS_PASSWORD=...
+            export NEXUS_REPO_URL=http://incode-binaries.westeurope.azurecontainer.io:8081/repository/maven2-incode-interims/
+
+            export REVISION=...
+
+            mvn clean deploy \
+                 -Drevision=$REVISION \
+                 -Dnexus-deploy \
+                 -s .m2/settings.xml \
+                 -Dnexus-deploy.repositoryUrl=$NEXUS_REPO_URL
+            -->
+            <id>nexus-deploy</id>
+            <activation>
+                <property>
+                    <name>nexus-deploy</name>
+                </property>
+            </activation>
+            <properties>
+                <nexus-deploy.repositoryUrl>http://localhost:8081/repository/builds</nexus-deploy.repositoryUrl>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.8</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>nexus-deploy.serverId</serverId>
+                            <skipStaging>true</skipStaging>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <repository>
+                    <id>nexus-deploy.serverId</id>
+                    <url>${nexus-deploy.repositoryUrl}</url>
+                </repository>
             </distributionManagement>
         </profile>
     </profiles>
