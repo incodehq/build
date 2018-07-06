@@ -17,9 +17,6 @@
         It does NOT define any mixins for Apache Isis.
     </description>
 
-    <properties>
-        <revision>7-SNAPSHOT</revision>
-    </properties>
 
     <url>https://github.com/incodehq/incode-build</url>
     <licenses>
