@@ -523,13 +523,14 @@
                 </snapshotRepository>
             </distributionManagement>
         </profile>
+	
         <profile>
             <!--
             this profile allows builds to be deployed to an inhouse nexus repo.
 
             export NEXUS_USERNAME=...
             export NEXUS_PASSWORD=...
-            export NEXUS_REPO_URL=http://incode-binaries.westeurope.azurecontainer.io:8081/repository/maven2-incode-interims/
+            export NEXUS_REPO_URL=...
 
             export REVISION=...
 
