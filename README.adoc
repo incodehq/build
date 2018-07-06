@@ -251,6 +251,8 @@ For example:
 ----
 sh release.sh 7 \
               8-SNAPSHOT \
+              danhaywood \
+              Pa$$w0rd \
               dan@haywood-associates.co.uk \
               "this is not really my passphrase"
 ----
@@ -259,8 +261,10 @@ where
 
 * `$1` is the release version
 * `$2` is the snapshot version
-* `$3` is the email of the secret key (`~/.gnupg/secring.gpg`) to use for signing
-* `$4` is the corresponding passphrase for that secret key.
+* `$3` is the nexus user account for https://oss.sonatype.org/[] (ie to deploy)
+* `$4` is the corresponding password
+* `$5` is the email of the secret key (`~/.gnupg/secring.gpg`) to use for signing
+* `$6` is the corresponding passphrase for that secret key.
 
 Other ways of specifying the key and passphrase are available, see the ``pgp-maven-plugin``'s
 http://kohsuke.org/pgp-maven-plugin/secretkey.html[documentation]).
