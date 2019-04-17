@@ -171,10 +171,11 @@ For example, to enable the https://github.com/danhaywood/java-mavenmixin-surefir
 
 == Change Log
 
+* 2.6 - replaces existing repository definition (`repo.incode.cloud`) with `repo.incode.work`).
+Also adds profile for `gcpappenginerepo-deploy`
 
-
-* 2.5 - replaces existing repository definitions (cloudbees, sonatype snapshot, apache snapshot) with repo.incode.cloud.
-Also adds profile for nexus-deploy.
+* 2.5 - replaces existing repository definitions (cloudbees, sonatype snapshot, apache snapshot) with `repo.incode.cloud`.
+Also adds profile for `nexus-deploy`.
 
 * 2.4 - moves snapshot repository definitions into profiles
 
@@ -238,8 +239,8 @@ For example:
 
 [source]
 ----
-sh release.sh 2.5 \
-              2.6-SNAPSHOT \
+sh release.sh 2.6 \
+              2.7-SNAPSHOT \
               danhaywood \
               Pa$$w0rd \
               dan@haywood-associates.co.uk \

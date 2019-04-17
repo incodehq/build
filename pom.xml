@@ -312,170 +312,6 @@
             </dependencyManagement>
         </profile>
 
-        <!--
-        The 'maven' repository is a group which includes 'maven-dev', 'maven-test' and 'maven-prod'
-        If necessary, it can (using properties) be excluded and the individual repositories included instead
-        -->
-        <profile>
-            <id>incode-cloud-maven</id>
-            <activation>
-                <property>
-                    <name>!skip.incode-cloud-maven</name>
-                </property>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>incode-cloud-maven</id>
-                    <url>https://repo.incode.cloud/repository/maven/</url>
-                    <name>Incode Cloud (maven)</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </snapshots>
-                    <layout>default</layout>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>incode-cloud-maven</id>
-                    <name>Incode Cloud (maven)</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </releases>
-                    <url>https://repo.incode.cloud/repository/maven/</url>
-                    <layout>default</layout>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-
-        <profile>
-            <id>incode-cloud-maven-dev</id>
-            <activation>
-                <property>
-                    <name>incode-cloud-maven-dev</name>
-                </property>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>incode-cloud-maven-dev</id>
-                    <url>https://repo.incode.cloud/repository/maven-dev/</url>
-                    <name>Incode Cloud (maven-dev)</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </snapshots>
-                    <layout>default</layout>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>incode-cloud-maven-dev</id>
-                    <name>Incode Cloud (maven-dev)</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </releases>
-                    <url>https://repo.incode.cloud/repository/maven-dev/</url>
-                    <layout>default</layout>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-
-        <profile>
-            <id>incode-cloud-maven-test</id>
-            <activation>
-                <property>
-                    <name>incode-cloud-maven-test</name>
-                </property>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>incode-cloud-maven-test</id>
-                    <url>https://repo.incode.cloud/repository/maven-test/</url>
-                    <name>Incode Cloud (maven-test)</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </snapshots>
-                    <layout>default</layout>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>incode-cloud-maven-test</id>
-                    <name>Incode Cloud (maven-test)</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </releases>
-                    <url>https://repo.incode.cloud/repository/maven-test/</url>
-                    <layout>default</layout>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-
-        <profile>
-            <id>incode-cloud-maven-prod</id>
-            <activation>
-                <property>
-                    <name>incode-cloud-maven-prod</name>
-                </property>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>incode-cloud-maven-prod</id>
-                    <url>https://repo.incode.cloud/repository/maven-prod/</url>
-                    <name>Incode Cloud (maven-prod)</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </snapshots>
-                    <layout>default</layout>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>incode-cloud-maven-prod</id>
-                    <name>Incode Cloud (maven-prod)</name>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
-                    </releases>
-                    <url>https://repo.incode.cloud/repository/maven-prod/</url>
-                    <layout>default</layout>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-
         <profile>
             <id>danhaywood-mavenmixin-sonatyperelease</id>
             <!-- 
@@ -523,7 +359,52 @@
 
         <profile>
             <!--
-            this profile allows builds to be deployed to an inhouse nexus repo.
+            this profile is to pull interim releases of open source software hosted in the repo.incode.work repo
+
+            (the 'nexus-deploy' profile, below, is used by open source libraries that upload to repo.incode.work).
+            -->
+            <id>repo-incode-work</id>
+            <activation>
+                <property>
+                    <name>!skip.repo-incode-work</name>
+                </property>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>repo-incode-work</id>
+                    <url>https://repo.incode.work</url>
+                    <name>Incode Work (maven)</name>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </snapshots>
+                    <layout>default</layout>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>repo-incode-work</id>
+                    <url>https://repo.incode.work</url>
+                    <name>Incode Work (maven)</name>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </releases>
+                    <layout>default</layout>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+
+        <profile>
+            <!--
+            this profile allows builds to be deployed to a nexus repo.
 
             export NEXUS_USERNAME=...
             export NEXUS_PASSWORD=...
@@ -550,7 +431,6 @@
                 </server>
               </servers>
             </settings>
-
             -->
             <id>nexus-deploy</id>
             <activation>
@@ -582,6 +462,54 @@
                 </repository>
             </distributionManagement>
         </profile>
+
+        <profile>
+            <!--
+            this profile allows builds to be deployed to a nexus repo.
+
+            export GCPAPPENGINEREPO_USERNAME=...
+            export GCPAPPENGINEREPO_PASSWORD=...
+            export GCPAPPENGINEREPO_URL=...
+
+            export REVISION=...
+
+            mvn clean deploy \
+                 -Drevision=$REVISION \
+                 -Dgcpappenginerepo-deploy \
+                 -s .m2/settings.xml \
+                 -Dgcpappenginerepo-deploy.repositoryUrl=$GCPAPPENGINEREPO_URL
+
+            with .m2/settings.xml as:
+
+            <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+              <servers>
+                <server>
+                  <id>gcpappenginerepo-deploy.serverId</id>
+                  <username>${env.GCPAPPENGINEREPO_USERNAME}</username>
+                  <password>${env.GCPAPPENGINEREPO_PASSWORD}</password>
+                </server>
+              </servers>
+            </settings>
+            -->
+            <id>gcpappenginerepo-deploy</id>
+            <activation>
+                <property>
+                    <name>gcpappenginerepo-deploy</name>
+                </property>
+            </activation>
+            <properties>
+                <gcpappenginerepo-deploy.repositoryUrl>https://my-gcp-project-id.appspot.com</gcpappenginerepo-deploy.repositoryUrl>
+            </properties>
+            <distributionManagement>
+                <repository>
+                    <id>gcpappenginerepo-deploy.serverId</id>
+                    <url>${gcpappenginerepo-deploy.repositoryUrl}</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+
     </profiles>
 
 </project>
