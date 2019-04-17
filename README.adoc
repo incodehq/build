@@ -263,7 +263,7 @@ If the script completes successfully, then push changes:
 
 [source]
 ----
-git push origin maint-2 && git push origin 2.5
+git push origin master && git push origin 2.6
 ----
 
 If the script fails to complete, then identify the cause, perform a `git reset --hard` to start over and fix the issue before trying again.
