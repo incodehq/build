@@ -173,8 +173,11 @@ For example, to enable the https://github.com/danhaywood/java-mavenmixin-surefir
 
 === for use with Apache Isis 2.0.0-M__x__
 
-* 7 - (merges in 2.5) replaces existing repository definitions (cloudbees, sonatype snapshot, apache snapshot) with repo.incode.cloud.
-Also adds profile for nexus-deploy.
+* 8 (merges in 2.6) - replaces existing repository definition (`repo.incode.cloud`) with `repo.incode.work`).
+Also adds profile for `gcpappenginerepo-deploy`
+
+* 7 - (merges in 2.5) replaces existing repository definitions (cloudbees, sonatype snapshot, apache snapshot) with `repo.incode.cloud`.
+Also adds profile for `nexus-deploy`.
 
 * 6 - (merges in 2.4), moves snapshot repository definitions into profiles
 
@@ -182,10 +185,13 @@ Also adds profile for nexus-deploy.
 
 * 4 - (based on 2), updated for datanucleus 0.0.5, to include DN 5.1.5 (in preparation for Apache Isis v2.0)
 
-=== for use with Apache Isis 1.16.x and earlier
+=== for use with Apache Isis 1.x
 
-* 2.5 - replaces existing repository definitions (cloudbees, sonatype snapshot, apache snapshot) with repo.incode.cloud.
-Also adds profile for nexus-deploy.
+* 2.6 - replaces existing repository definition (`repo.incode.cloud`) with `repo.incode.work`).
+Also adds profile for `gcpappenginerepo-deploy`
+
+* 2.5 - replaces existing repository definitions (cloudbees, sonatype snapshot, apache snapshot) with `repo.incode.cloud`.
+Also adds profile for `nexus-deploy`.
 
 * 2.4 - moves snapshot repository definitions into profiles
 
@@ -249,8 +255,8 @@ For example:
 
 [source]
 ----
-sh release.sh 7 \
-              8-SNAPSHOT \
+sh release.sh 8 \
+              9-SNAPSHOT \
               danhaywood \
               Pa$$w0rd \
               dan@haywood-associates.co.uk \
@@ -273,7 +279,7 @@ If the script completes successfully, then push changes:
 
 [source]
 ----
-git push origin master && git push origin 7
+git push origin v2 && git push origin 8
 ----
 
 If the script fails to complete, then identify the cause, perform a `git reset --hard` to start over and fix the issue before trying again.
